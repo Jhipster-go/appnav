@@ -1,0 +1,27 @@
+
+<div>
+    <h2><span data-translate="appnavApp.category.detail.title">Category</span> {{vm.category.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span data-translate="appnavApp.category.name">Name</span></dt>
+        <dd>
+            <span>{{vm.category.name}}</span>
+        </dd>
+        <dt><span data-translate="appnavApp.category.wxApp">Wx App</span></dt>
+        <dd>
+            <a ui-sref="wx-app-detail({id:vm.category.wxAppId})">{{vm.category.wxAppId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="category-detail.edit({id:vm.category.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "otherEntityField": "firstName"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "wxapp",
+            "otherEntityName": "wxApp",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "comment",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "publicationDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20170216093527",
+    "entityTableName": "comment",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass"
+}

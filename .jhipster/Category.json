@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "wxApp",
+            "otherEntityName": "wxApp",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170216093527",
+    "javadoc": "类别.\n@author Bruce true hipster",
+    "entityTableName": "category",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass"
+}

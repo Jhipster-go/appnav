@@ -22,5 +22,19 @@
 
     <cache alias="com.mycompany.myapp.social.SocialUserConnection" uses-template="simple"/>
 
+    <cache alias="com.mycompany.myapp.domain.Category" uses-template="simple"/>
+
+    <cache alias="com.mycompany.myapp.domain.Comment" uses-template="simple"/>
+
+    <cache alias="com.mycompany.myapp.domain.Tag" uses-template="simple"/>
+
+    <cache alias="com.mycompany.myapp.domain.WxApp" uses-template="simple"/>
+
+    <cache alias="com.mycompany.myapp.domain.WxApp.comments" uses-template="simple"/>
+
+    <cache alias="com.mycompany.myapp.domain.WxApp.categories" uses-template="simple"/>
+
+    <cache alias="com.mycompany.myapp.domain.WxApp.tags" uses-template="simple"/>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </config>

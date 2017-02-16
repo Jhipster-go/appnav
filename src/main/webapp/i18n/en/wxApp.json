@@ -1,0 +1,33 @@
+{
+    "appnavApp": {
+        "wxApp" : {
+            "home": {
+                "title": "Wx Apps",
+                "createLabel": "Create a new WxApp",
+                "createOrEditLabel": "Create or edit a WxApp",
+                "search": "Search for WxApp"
+            },
+            "created": "A new Wx App is created with identifier {{ param }}",
+            "updated": "A Wx App is updated with identifier {{ param }}",
+            "deleted": "A Wx App is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete WxApp {{ id }}?"
+            },
+            "detail": {
+                "title": "WxApp"
+            },
+            "icon": "Icon",
+            "name": "Name",
+            "description": "Description",
+            "publicationDate": "Publication Date",
+            "screenshot": "Screenshot",
+            "qcode": "Qcode",
+            "score": "Score",
+            "views": "Views",
+            "comment": "Comment",
+            "category": "Category",
+            "tag": "Tag",
+            "user": "User"
+        }
+    }
+}

@@ -1,0 +1,96 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myWxAppLabel" data-translate="appnavApp.wxApp.home.createOrEditLabel">Create or edit a Wx App</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.wxApp.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.wxApp.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="appnavApp.wxApp.icon" for="field_icon">Icon</label>
+            <input type="file" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+                   ngf-accept="'image/*'" ngf-max-size="1MB" ngf-resize="{width: 100, height: 100}"
+                   class="form-control" name="icon" id="field_icon" ng-model="vm.wxApp.icon"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="appnavApp.wxApp.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.wxApp.name"
+                    required/>
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="appnavApp.wxApp.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.wxApp.description"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="appnavApp.wxApp.publicationDate" for="field_publicationDate">Publication Date</label>
+                <div class="input-group">
+                    <input id="field_publicationDate" type="text" class="form-control" name="publicationDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.wxApp.publicationDate" is-open="vm.datePickerOpenStatus.publicationDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('publicationDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="appnavApp.wxApp.screenshot" for="field_screenshot">Screenshot</label>
+            <input type="text" class="form-control" name="screenshot" id="field_screenshot"
+                    ng-model="vm.wxApp.screenshot"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="appnavApp.wxApp.qcode" for="field_qcode">Qcode</label>
+            <input type="text" class="form-control" name="qcode" id="field_qcode"
+                    ng-model="vm.wxApp.qcode"
+                    required/>
+            <div ng-show="editForm.qcode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.qcode.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="appnavApp.wxApp.score" for="field_score">Score</label>
+            <input type="number" class="form-control" name="score" id="field_score"
+                    ng-model="vm.wxApp.score"
+                    />
+        </div>
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="appnavApp.wxApp.views" for="field_views">Views</label>-->
+            <!--<input type="number" class="form-control" name="views" id="field_views"-->
+                    <!--ng-model="vm.wxApp.views"-->
+                    <!--/>-->
+        <!--</div>-->
+
+        <div class="form-group">
+            <label data-translate="appnavApp.wxApp.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.wxApp.userId" ng-options="user.id as user.firstName for user in vm.users"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

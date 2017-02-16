@@ -1,0 +1,91 @@
+<div>
+    <h2 data-translate="appnavApp.wxApp.home.title">Wx Apps</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="wx-app.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="appnavApp.wxApp.home.createLabel">
+                        Create new WxApp
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'appnavApp.wxApp.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="icon"><span data-translate="appnavApp.wxApp.icon">Icon</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span data-translate="appnavApp.wxApp.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="description"><span data-translate="appnavApp.wxApp.description">Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="publicationDate"><span data-translate="appnavApp.wxApp.publicationDate">Publication Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="screenshot"><span data-translate="appnavApp.wxApp.screenshot">Screenshot</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="qcode"><span data-translate="appnavApp.wxApp.qcode">Qcode</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="score"><span data-translate="appnavApp.wxApp.score">Score</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="views"><span data-translate="appnavApp.wxApp.views">Views</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="userFirstName"><span data-translate="appnavApp.wxApp.user">User</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="wxApp in vm.wxApps track by wxApp.id">
+                    <td><a ui-sref="wx-app-detail({id:wxApp.id})">{{wxApp.id}}</a></td>
+                    <td>{{wxApp.icon}}</td>
+                    <td>{{wxApp.name}}</td>
+                    <td>{{wxApp.description}}</td>
+                        <td>{{wxApp.publicationDate | date:'mediumDate'}}</td>
+                    <td>{{wxApp.screenshot}}</td>
+                    <td>{{wxApp.qcode}}</td>
+                    <td>{{wxApp.score}}</td>
+                    <td>{{wxApp.views}}</td>
+                    <td>
+                        {{wxApp.userFirstName}}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="wx-app-detail({id:wxApp.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="wx-app.edit({id:wxApp.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="wx-app.delete({id:wxApp.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

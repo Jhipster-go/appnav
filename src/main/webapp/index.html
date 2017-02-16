@@ -22,14 +22,14 @@
     <!--[if lt IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <page-ribbon></page-ribbon>
+    <!--<page-ribbon></page-ribbon>-->
     <div ui-view="navbar" ng-cloak></div>
     <div class="container">
         <div class="well" ui-view="content">
             <!-- Angular views -->
         </div>
 
-        <div class="footer" ng-cloak>
+        <div class="footer" ui-view="footer" ng-cloak>
             <p data-translate="footer">This is your footer</p>
         </div>
     </div>
@@ -95,7 +95,35 @@
     <script src="app/layouts/error/error.state.js"></script>
     <script src="app/home/home.state.js"></script>
     <script src="app/home/home.controller.js"></script>
+    <script src="app/entities/wx-app/wx-app-dialog.controller.js"></script>
+    <script src="app/entities/wx-app/wx-app-detail.controller.js"></script>
+    <script src="app/entities/wx-app/wx-app-delete-dialog.controller.js"></script>
+    <script src="app/entities/wx-app/wx-app.state.js"></script>
+    <script src="app/entities/wx-app/wx-app.service.js"></script>
+    <script src="app/entities/wx-app/wx-app.search.service.js"></script>
+    <script src="app/entities/wx-app/wx-app.controller.js"></script>
+    <script src="app/entities/tag/tag-dialog.controller.js"></script>
+    <script src="app/entities/tag/tag-detail.controller.js"></script>
+    <script src="app/entities/tag/tag-delete-dialog.controller.js"></script>
+    <script src="app/entities/tag/tag.state.js"></script>
+    <script src="app/entities/tag/tag.service.js"></script>
+    <script src="app/entities/tag/tag.search.service.js"></script>
+    <script src="app/entities/tag/tag.controller.js"></script>
     <script src="app/entities/entity.state.js"></script>
+    <script src="app/entities/comment/comment-dialog.controller.js"></script>
+    <script src="app/entities/comment/comment-detail.controller.js"></script>
+    <script src="app/entities/comment/comment-delete-dialog.controller.js"></script>
+    <script src="app/entities/comment/comment.state.js"></script>
+    <script src="app/entities/comment/comment.service.js"></script>
+    <script src="app/entities/comment/comment.search.service.js"></script>
+    <script src="app/entities/comment/comment.controller.js"></script>
+    <script src="app/entities/category/category-dialog.controller.js"></script>
+    <script src="app/entities/category/category-detail.controller.js"></script>
+    <script src="app/entities/category/category-delete-dialog.controller.js"></script>
+    <script src="app/entities/category/category.state.js"></script>
+    <script src="app/entities/category/category.service.js"></script>
+    <script src="app/entities/category/category.search.service.js"></script>
+    <script src="app/entities/category/category.controller.js"></script>
     <script src="app/components/util/truncate-words.filter.js"></script>
     <script src="app/components/util/truncate-characters.filter.js"></script>
     <script src="app/components/util/sort-by.directive.js"></script>

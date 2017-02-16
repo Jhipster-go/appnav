@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="appnavApp.wxApp.detail.title">Wx App</span> {{vm.wxApp.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span data-translate="appnavApp.wxApp.icon">Icon</span></dt>
+        <dd>
+            <span>{{vm.wxApp.icon}}</span>
+        </dd>
+        <dt><span data-translate="appnavApp.wxApp.name">Name</span></dt>
+        <dd>
+            <span>{{vm.wxApp.name}}</span>
+        </dd>
+        <dt><span data-translate="appnavApp.wxApp.description">Description</span></dt>
+        <dd>
+            <span>{{vm.wxApp.description}}</span>
+        </dd>
+        <dt><span data-translate="appnavApp.wxApp.publicationDate">Publication Date</span></dt>
+        <dd>
+            <span>{{vm.wxApp.publicationDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="appnavApp.wxApp.screenshot">Screenshot</span></dt>
+        <dd>
+            <span>{{vm.wxApp.screenshot}}</span>
+        </dd>
+        <dt><span data-translate="appnavApp.wxApp.qcode">Qcode</span></dt>
+        <dd>
+            <span>{{vm.wxApp.qcode}}</span>
+        </dd>
+        <dt><span data-translate="appnavApp.wxApp.score">Score</span></dt>
+        <dd>
+            <span>{{vm.wxApp.score}}</span>
+        </dd>
+        <dt><span data-translate="appnavApp.wxApp.views">Views</span></dt>
+        <dd>
+            <span>{{vm.wxApp.views}}</span>
+        </dd>
+        <dt><span data-translate="appnavApp.wxApp.user">User</span></dt>
+        <dd>
+            {{vm.wxApp.userFirstName}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="wx-app-detail.edit({id:vm.wxApp.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

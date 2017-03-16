@@ -21,6 +21,9 @@
         Please choose additional languages to install English? 
     (15/15) Besides JUnit and Karma, which testing frameworks would you like to use? Gatling, Cucumber, Protractor
 
+### 配置
+    h2数据库:
+
 ### 实体类创建如下
 
     /**

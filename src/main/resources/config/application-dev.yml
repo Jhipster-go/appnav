@@ -26,8 +26,9 @@ spring:
         serialization.indent_output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:mysql://192.168.99.100:33066/appnav?useUnicode=true&characterEncoding=utf8&useSSL=false
-        username: root
+        #url: jdbc:mysql://192.168.99.100:33066/appnav?useUnicode=true&characterEncoding=utf8&useSSL=false
+        url: jdbc:h2:mem:appnav;DB_CLOSE_DELAY=-1
+        username: appnav
         password:
         hikari:
             data-source-properties:
@@ -36,8 +37,10 @@ spring:
                 prepStmtCacheSqlLimit: 2048
                 useServerPrepStmts: true
     jpa:
-        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-        database: MYSQL
+        #database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        database-platform: io.github.jhipster.domain.util.FixedH2Dialect
+        #database: MYSQL
+        database: H2
         show-sql: true
         properties:
             hibernate.id.new_generator_mappings: true
